@@ -248,7 +248,7 @@ text-shadow: 0 0 18px rgba(160,200,255,0.6);
 
  .scene {
   width: 92%;
-  margin-top: 330px;
+  margin-top: 320px;
   transform: scale(0.92);
   transform-origin: top center;
 }
@@ -340,7 +340,7 @@ text-shadow: 0 0 18px rgba(160,200,255,0.6);
     }
 
     function askOracle() {
-  document.body.style.overflow = "hidden"; // 
+ 
 
   const question = document.getElementById("question").value.trim();
   if (!question) return;
@@ -384,8 +384,13 @@ text-shadow: 0 0 18px rgba(160,200,255,0.6);
         ? messagesYes[Math.floor(Math.random() * messagesYes.length)]
         : messagesNo[Math.floor(Math.random() * messagesNo.length)];
 
+ const scene = document.querySelector('.scene');
+  scene.style.transition = "transform 0.3s ease";
+  scene.style.transform = "translateY(-20px)"; //
+
       let current = 0;
       result.classList.add("show");
+
 
       const interval = setInterval(() => {
         current++;
