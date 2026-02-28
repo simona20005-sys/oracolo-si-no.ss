@@ -247,6 +247,8 @@ text-shadow: 0 0 18px rgba(160,200,255,0.6);
 @media (max-width: 480px) {
 
  .scene {
+scroll-margin-top: 0; 
+  scroll-behavior: auto; 
   width: 92%;
   margin-top: 320px;
   transform: scale(0.92);
@@ -402,7 +404,7 @@ text-shadow: 0 0 18px rgba(160,200,255,0.6);
           setTimeout(() => {
             answerEl.innerText = isYes ? "SÌ" : "NO";
             messageEl.innerText = finalMessage;
-           document.body.style.overflow = "hidden"; // 
+           document.body.style.overflow = ""; // 
 }, 500);
         }
       }, 20);
