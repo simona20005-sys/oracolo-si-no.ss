@@ -386,6 +386,11 @@ document.body.style.overflow = "";
         ? messagesYes[Math.floor(Math.random() * messagesYes.length)]
         : messagesNo[Math.floor(Math.random() * messagesNo.length)];
 
+const scene = document.querySelector('.scene');
+scene.style.transition = "transform 0.3s ease";
+
+// sale di meno verso l'alto
+scene.style.transform = "translateY(-10px)"; //
 
       let current = 0;
       result.classList.add("show");
