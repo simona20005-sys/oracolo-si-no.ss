@@ -342,6 +342,12 @@ text-shadow: 0 0 18px rgba(160,200,255,0.6);
     function askOracle() {
  document.body.style.overflow = "hidden";
 
+const scene = document.querySelector('.scene');
+
+// 
+scene.style.transition = "transform 0.3s ease";
+scene.style.transform = "translateY(0px)"; //
+
   const question = document.getElementById("question").value.trim();
   if (!question) return;
 
