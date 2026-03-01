@@ -321,8 +321,7 @@ scroll-margin-top: 0;
       <h1>Oracolo Sì o No</h1>
       <p class="subtitle">Formula la tua domanda e affidati alle energie.</p>
 
-      <textarea id="question" placeholder="Scrivi qui la tua domanda..."></textarea>
-
+      <textarea id="questionBox" placeholder="Scrivi qui la tua domanda..."></textarea>
       <button onclick="askOracle()">Chiedi all’oracolo</button>
 
       <div class="result" id="result">
@@ -405,21 +404,21 @@ scroll-margin-top: 0;
             answerEl.innerText = isYes ? "SÌ" : "NO";
             messageEl.innerText = finalMessage;
 
-const oracleBox = document.getElementById("oracleBox");
 
-// calcola la posizione centrale dello schermo
-const boxTop = oracleBox.getBoundingClientRect().top + window.scrollY;
-const boxHeight = oracleBox.offsetHeight;
-const screenCenter = window.innerHeight / 2;
+    // CENTRA la sezione della domanda verticalmente SOLO ORA
+    const oracleBox = document.getElementById("oracleBox");
+    const boxTop = oracleBox.getBoundingClientRect().top + window.scrollY;
+    const boxHeight = oracleBox.offsetHeight;
+    const screenCenter = window.innerHeight / 2;
 
-// scrolla in modo che la box sia centrata
-window.scrollTo({
-  top: boxTop - screenCenter + boxHeight / 2,
-  behavior: "smooth" // movimento fluido
-});
+    window.scrollTo({
+        top: boxTop - screenCenter + boxHeight / 2,
+        behavior: "smooth"
+    });
 
-           document.body.style.overflow = ""; // 
+    document.body.style.overflow = ""; // riabilita lo scroll
 }, 500);
+
         }
       }, 20);
     }
