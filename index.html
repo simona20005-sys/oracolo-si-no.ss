@@ -317,7 +317,7 @@ scroll-margin-top: 0;
   <div class="scene">
     <img src="dea.PNG" class="goddess" alt="Dea dell'Oracolo">
 
-    <div class="oracle-box">
+<div class="oracle-box" id="oracleBox">
       <h1>Oracolo Sì o No</h1>
       <p class="subtitle">Formula la tua domanda e affidati alle energie.</p>
 
@@ -404,6 +404,20 @@ scroll-margin-top: 0;
           setTimeout(() => {
             answerEl.innerText = isYes ? "SÌ" : "NO";
             messageEl.innerText = finalMessage;
+
+const oracleBox = document.getElementById("oracleBox");
+
+// calcola la posizione centrale dello schermo
+const boxTop = oracleBox.getBoundingClientRect().top + window.scrollY;
+const boxHeight = oracleBox.offsetHeight;
+const screenCenter = window.innerHeight / 2;
+
+// scrolla in modo che la box sia centrata
+window.scrollTo({
+  top: boxTop - screenCenter + boxHeight / 2,
+  behavior: "smooth" // movimento fluido
+});
+
            document.body.style.overflow = ""; // 
 }, 500);
         }
